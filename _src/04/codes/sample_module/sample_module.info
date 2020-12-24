@@ -1,0 +1,5 @@
+name = Sample Module
+description = Just a sample module
+package = Custom
+core = 7.x
+files[] = sample_module.module

@@ -1,0 +1,75 @@
+<?php
+/**
+ * @file sample_module.module
+ * TODO: Enter file description here.
+ */
+
+/**
+ * Implements hook_help().
+ */
+function sample_module_help($path, $arg) {
+  switch ($path) {
+    case 'admin/help#sample_module':
+      return t("This module serves as a simple example of module code generation");
+    // OPTIONAL: Add additional cases for other paths that should display help text.
+  }
+}
+
+/**
+ * Implements hook_menu().
+ */
+function sample_module_menu() { 
+  // This is the minimum information you can provide for a menu item.
+  $items['sample_module'] = array(
+    'title' => 'TODO: Enter menu item title',
+    'page callback' => 'TODO: Enter callback function',
+    'access arguments' => array('TODO: Enter user permissions'),
+  );
+  // more complex menu item
+  $items['sample_module/foo'] = array(
+    'title' => 'TODO: Enter menu item title',
+    'description' => 'TODO: Enter description',
+    'page callback' => 'TODO: Enter callback function',
+    'page arguments' => '', // An array of arguments to pass to the page callback function. Integer values pass the corresponding URL component.
+    'access callback' => '', // defaults to user_access()
+    'access arguments' => array('TODO: Enter user permissions'),
+    'weight' => 0,
+    'type' => MENU_NORMAL_ITEM, // One of MENU_NORMAL_ITEM / MENU_CALLBACK / MENU_SUGGESTED_ITEM / MENU_LOCAL_TASK / MENU_DEFAULT_LOCAL_TASK
+    'menu_name' => '', // Menu to place this item in.
+    'title callback' => '', // Function to generate the title, defaults to t(). 
+    'title arguments' => '', // Arguments to send to t() or your custom callback. 
+  );
+  // OPTIONAL: Fill in additional static menu items
+
+  return $items;
+}
+
+/**
+ * Implements hook_permission().
+ */
+function sample_module_permission() {
+  return array(
+    'administer my module' => array(
+      'title' => t('Administer my module'), 
+      'description' => t('Perform administration tasks for my module.'),
+    ),
+  );
+}
+
+/**
+ * Implements hook_theme().
+ */
+function sample_module_theme($existing, $type, $theme, $path) {
+  return array(
+    'my_simple_theme_function' => array(
+      'variables' => array('arg1' => NULL, 'arg2' => 0, 'arg3' => FALSE),
+    ),
+    'my_form_theme_function' => array(
+      'render element' => 'form',
+    ),
+    'my_theme_template' => array(
+      'variables' => array('arg1' => NULL, 'arg2' => 0, 'arg3' => FALSE),
+      'template' => 'my_theme_template',
+    ),
+  );
+}

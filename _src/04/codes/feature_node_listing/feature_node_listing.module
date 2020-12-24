@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the feature_node_listing feature.
+ */
+
+include_once('feature_node_listing.features.inc');
